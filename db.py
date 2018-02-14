@@ -26,8 +26,9 @@ def countStudents():
     return amount.num
 
 
-def deleteStudent(name):
-    db.query("DELETE FROM students WHERE student_name = :name", name=name)
+def deleteStudent(id):
+    db.query("DELETE FROM signin WHERE signin.student_id = :id", id=id)
+    db.query("DELETE FROM students WHERE students.id = :id", id=id)
 
 
 def get_all_ids():

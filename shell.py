@@ -36,9 +36,9 @@ def get_id():
 
 def delete_student():
     print("****WARNING CANNOT UNDELETE STUDENT****")
-    name = input("What is the name of the soon to be deleted student??->")
-    if name in core.get_list_names():
-        db.deleteStudent(name)
+    id = input("What is the id for the student you would like to delete??->")
+    if int(id) in core.get_list_ids():
+        db.deleteStudent(id)
         print("The Delete Was Successful!!!")
     else:
         print("That name was not in the system restart and try again!!!")
